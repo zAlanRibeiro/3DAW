@@ -1,0 +1,4 @@
+nome;sigla;carga
+Estrutura de Dados;3ESD;3
+Banco de DADOS;3BDD;3
+Matematica;1MAT;6
