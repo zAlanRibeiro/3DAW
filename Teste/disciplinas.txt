@@ -1,8 +1,0 @@
-nome;sigla;carga
-Matematica;3ESD;
-Banco de Dados;3BDD;70
-Estrutura de Dados;3ESD;70
-Algebra Linear;3ALG;20
-lalala;la;90
-teste;teste;90
-latam;lam;70
