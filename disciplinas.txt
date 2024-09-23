@@ -1,4 +1,7 @@
 nome;sigla;carga
 Estrutura de Dados;3ESD;3
-Banco de DADOS;3BDD;3
+BancoDeDados;3BDD;3
 Matematica;1MAT;6
+AlgebraLinear;Alg;90
+Error;Err;999
+ProjetoDeVida;PDV;10
