@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
+<?php include 'ex05_Menu.html'; ?>
 </head>
 <body>
 <h1>Listar Disciplina</h1>

@@ -1,15 +1,26 @@
 <?php
+   include 'ex05_Menu.html';
    $arquivo = fopen("disciplinas.txt", "r");
    $arquivo2 = fopen("disciplinas2.txt", "w");
-   $nome = $_POST ("nome");
-   $sigla = $_POST ("sigal");
-   $carga = $_POST ("carga");
-   $materia = $_POST ("materia");
+   $materia = $_POST["materia"];
+   $nome = $_POST ["nome"];
+   $sigla = $_POST ["sigla"];
+   $carga = $_POST ["carga"];
+   $cont = 0;
    echo $materia;
    while (!feof ($arquivo)){
-       $linha = fgets ($arquivo);
-       if ($materia == $nome){
-          
-       }
+        $linha = fgets ($arquivo);
+        $colunaDados = explode(";", $linha);
+        if ($cont == 0){
+            if ($materia == $colunaDados[0]){
+                $linha = $nome . ";" . $sigla . ";" . $carga . "\n";
+                $cont =  1;
+            }
+        }       
+       fwrite($arquivo2, $linha);
    }
+   fclose($arquivo);
+   fclose($arquivo2);
+   rename("disciplinas2.txt", "disciplinas.txt");
+   echo "Disciplina atualizada com sucesso!";
 ?>

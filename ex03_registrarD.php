@@ -24,6 +24,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST')  {
 <!DOCTYPE html>
 <html>
 <head>
+<?php include 'ex05_Menu.html'; ?>
 </head>
 <body>
 <h1>Criar Nova Disciplina</h1>
