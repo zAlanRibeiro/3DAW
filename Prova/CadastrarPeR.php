@@ -1,7 +1,7 @@
 <?php
 $msg = "";
 if ($_SERVER['REQUEST_METHOD'] == 'POST')  {
-    $id = $_POST["nPergunta"]
+    $id = $_POST["nPergunta"];
     $pergunta = $_POST["pergunta"];
     $r1 = $_POST["resposta1"];
     $r2 = $_POST["resposta2"];
