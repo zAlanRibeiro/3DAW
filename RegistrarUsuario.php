@@ -7,7 +7,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST')  {
     
     if (!file_exists("usuario.txt")) {
         $arquivo = fopen("usuario.txt","w") or die("erro ao criar arquivo");
-        $linha = "nome;matricula;nascimento;carga\n";
+        $linha = "nome;email;senha;\n";
         fwrite($arquivo,$linha);
         fclose($arquivo);
     }
