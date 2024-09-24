@@ -10,7 +10,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST')  {
     $rC = $_POST["respostaCorreta"];
     
     if (!file_exists("PerguntasErespostas.txt")) {
-        $arquivo = fopen("erguntasErespostas.txt","w") or die("erro ao criar arquivo");
+        $arquivo = fopen("PerguntasErespostas.txt","w") or die("erro ao criar arquivo");
         $linha = "nPergunta;pergunta;resposta1;resposta2;resposta3;resposta4;respostaCorreta\n";
         fwrite($arquivo,$linha);
         fclose($arquivo);
