@@ -32,7 +32,6 @@
                     <th>Resposta Correta</th>
                 </tr>
             </thead>
-        </table>
     </div>
 </body>
 </html>
@@ -59,3 +58,4 @@
     }
     fclose($arquivo);
 ?>  
+</table>
