@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Cadastro de Usuario</title>
+</head>
+<body>
+    <h1>Cadastro de Usuario</h1>
+    <form id="formCadastro" onsubmit="return false;">
+        Nome: <input type="text" id="nome" required><br><br>
+        E-mail: <input type="email" id="email" required><br><br>
+        Senha: <input type="password" id="senha" required minlength="6"><br><br>
+        Confirmar Senha: <input type="password" id="confirmarSenha" required><br><br>
+        <button onclick="cadastrarUsuario()">Cadastrar</button>
+    </form>
+
+    <p id="mensagemErro" style="color: red;"></p>
+
+    <script src="scripts.js"></script>
+    <script>
+        function validarFormulario() {
+            const email = document.getElementById('email').value;
+            const senha = document.getElementById('senha').value;
+            const confirmarSenha = document.getElementById('confirmarSenha').value;
+            
+            const emailRegex = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/;
+            if (!emailRegex.test(email)) {
+                mostrarErro('Por favor, insira um e-mail valido.');
+                return false;
+            }
+
+            if (senha !== confirmarSenha) {
+                mostrarErro('As senhas não coincidem.');
+                return false;
+            }
+
+            return true;
+        }
+
+        function mostrarErro(mensagem) {
+            document.getElementById('mensagemErro').textContent = mensagem;
+        }
+
+        function cadastrarUsuario() {
+            const form = document.getElementById('formCadastro');
+            if (!validarFormulario()) return;
+
+            const nome = document.getElementById('nome').value;
+            const email = document.getElementById('email').value;
+            const senha = document.getElementById('senha').value;
+
+            Usuario.cadastrar(nome, email, senha);
+            
+            form.reset();
+            alert('Usuário cadastrado com sucesso!');
+            window.location.href = 'lista.html';
+        }
+    </script>
+</body>
+</html>

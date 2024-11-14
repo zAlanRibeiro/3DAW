@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Lista de Perguntas</title>
+</head>
+
+<body>
+    <h1>Lista de Perguntas</h1>
+
+    <table border="1" id="tabelaPerguntas">
+        <thead>
+            <tr>
+                <th>Pergunta</th>
+                <th>Alternativa A</th>
+                <th>Alternativa B</th>
+                <th>Alternativa C</th>
+                <th>Gabarito</th>
+            </tr>
+        </thead>
+        <tbody></tbody>
+    </table>
+
+    <p id="mensagem"></p>
+
+    <br>
+    <a href="cadastrarPerguntas.html">Cadastrar nova pergunta</a><br><br>
+
+    <script src="scripts.js"></script>
+    <script>
+        function carregarPerguntas() {
+            const perguntas = DB.getPerguntasPrototipo();
+            const tbody = document.querySelector('#tabelaPerguntas tbody');
+            tbody.innerHTML = '';
+
+            perguntas.forEach((pergunta) => {
+                const tr = document.createElement('tr');
+                tr.innerHTML = `
+                    <td>${pergunta.pergunta}</td>
+                    <td>${pergunta.respostas[0]}</td>
+                    <td>${pergunta.respostas[1]}</td>
+                    <td>${pergunta.respostas[2]}</td>
+                    <td>${pergunta.correta}</td>
+                `;
+                tbody.appendChild(tr);
+            });
+        }
+
+        window.onload = carregarPerguntas;
+    </script>
+</body>
+
+</html>
