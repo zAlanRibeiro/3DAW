@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pagamento</title>
+    <link rel="stylesheet" href="pagamento.css">
+</head>
+<body>
+    <header>
+        <div><img src="ImagensPetala/petalaBeleza.png" alt="Logo Empresa" width="125" class="logo"></div>
+        <h1 class="titulo">Pagamento Seguro</h1>
+    </header>
+    <main>
+        <form action="processar_pagamento.php" method="POST" onsubmit="return validarFormulario()">
+            <h2>Formulário de Pagamento</h2>
+            <div>
+                <label for="nome">Nome Completo:</label><br>
+                <input type="text" id="nome" name="nome" required>
+            </div>
+            <div>
+                <label for="email">E-mail:</label><br>
+                <input type="email" id="email" name="email" required>
+            </div>
+            <div>
+                <label for="cartao">Número do Cartão:</label><br>
+                <input type="text" id="cartao" name="cartao" maxlength="16" required>
+            </div>
+            <div>
+                <label for="cvv">CVV:</label><br>
+                <input type="text" id="cvv" name="cvv" maxlength="3" required>
+            </div>
+            <div>
+                <label for="data-validade">Data de Validade:</label><br>
+                <input type="month" id="data-validade" name="data-validade" required>
+            </div>
+            <button type="submit">Pagar</button>
+        </form>
+    </main>
+    <footer>
+        <div class="footer-info">
+            <p>&copy; 2024 - Pétalas de Beleza</p>
+        </div>
+    </footer>
+    <script>
+        function validarFormulario() {
+            const nome = document.getElementById('nome').value.trim();
+            const email = document.getElementById('email').value.trim();
+            const cartao = document.getElementById('cartao').value.trim();
+            const cvv = document.getElementById('cvv').value.trim();
+
+            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            const cartaoRegex = /^\d{16}$/;
+            const cvvRegex = /^\d{3}$/;
+
+            if (!emailRegex.test(email)) {
+                alert('Por favor, insira um e-mail válido.');
+                return false;
+            }
+
+            if (!cartaoRegex.test(cartao)) {
+                alert('Por favor, insira um número de cartão válido com 16 dígitos.');
+                return false;
+            }
+
+            if (!cvvRegex.test(cvv)) {
+                alert('Por favor, insira um CVV válido com 3 dígitos.');
+                return false;
+            }
+
+            return true;
+        }
+    </script>
+</body>
+</html>

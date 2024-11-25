@@ -1,3 +1,9 @@
+<?php
+session_start();
+$isLoggedIn = isset($_SESSION['user_id']);
+$userName = $isLoggedIn ? $_SESSION['user_name'] : null;
+?>
+
 <!DOCTYPE html>
 <html lang="pt-BR">
 
@@ -21,12 +27,17 @@
 
     <nav>
         <ul class="menu">
-            <li><a href="HomePG1.html">Home</a></li>
+            <li><a href="HomePG1.php">Home</a></li>
         </ul>
         <div class="subtitulo">Central de Ajuda</div>
         <ul class="menu-right">
-            <li><a href="">Login</a></li>
-            <li><a href="">Cadastre-se</a></li>
+            <?php if ($isLoggedIn): ?>
+                <li class="bem-vindo"><span>Olá, <?php echo htmlspecialchars($userName); ?></span></li>
+                <li><a href="logout.php">Sair</a></li>
+            <?php else: ?>
+                <li><a href="Login.html">Login</a></li>
+                <li><a href="CadastroPG1.html">Cadastre-se</a></li>
+            <?php endif; ?>
         </ul>
     </nav>
 

@@ -2,6 +2,7 @@ html, body {
     height: 100%;
     margin: 0;
     padding: 0;
+    font-family: Arial, sans-serif;
 }
 
 body {
@@ -36,7 +37,10 @@ nav {
     background-color: rgb(192, 112, 138);
     padding: 10px 0;
     display: flex;
+    justify-content: space-between; /* Para garantir que os itens da direita e esquerda se posicionem corretamente */
     align-items: center;
+    width: 100%;
+    position: relative;
 }
 
 .menu {
@@ -44,7 +48,6 @@ nav {
     padding: 0;
     margin: 0;
     display: flex;
-    flex-grow: 1;
     align-items: center;
 }
 
@@ -69,26 +72,74 @@ nav {
     align-items: center;
 }
 
+.menu-right a {
+    text-decoration: none;
+    color: white;
+    font-size: 18px;
+    padding: 5px 10px;
+    display: flex;
+    align-items: center;
+    margin: 0 10px;
+}
+
+.subtitulo {
+    font-family: 'Dancing Script', cursive;
+    color: white;
+    font-size: 35px;
+    text-align: center;
+    margin: 0;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.menu-right a:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+    border-radius: 5px;
+}
+
 .menu a:hover {
     background-color: rgba(255, 255, 255, 0.2);
     border-radius: 5px;
 }
 
 main {
-    flex-grow: 1; 
+    flex-grow: 1;
+    padding: 20px;
 }
 
+.sobre-nos {
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: center;
+    font-size: 1.2rem;
+}
+
+.sobre-nos h2 {
+    font-family: 'Dancing Script', cursive;
+    color: rgb(192, 112, 138);
+    font-size: 2rem;
+    margin-bottom: 20px;
+}
+
+.sobre-nos p {
+    line-height: 1.6;
+    color: #555;
+    margin-bottom: 15px;
+}
 
 footer {
     background-color: #e59eaa;
     color: white;
     width: 100%;
-    padding: 10px 20px;
+    padding: 20px;
     box-sizing: border-box;
-    font-size: 15px;
+    font-size: 14px;
     display: flex;
     justify-content: space-between;
     align-items: center;
+    flex-wrap: wrap;
+    text-align: center;
 }
 
 footer p {
@@ -99,103 +150,44 @@ footer p {
     text-align: left;
 }
 
-/*Formato pardrão para cada página*/ 
+.pagamento-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
 
-.subtitulo {
+.pagamento-container img {
+    margin-top: 10px;
+}
+
+.linha-rosa {
+    border: none;
+    height: 4px;
+    background-color: rgb(192, 112, 138);
+    margin: 20px 0;
+}
+
+.informacoes {
+    text-align: center;
+    font-size: 1.2rem;
+    margin-top: 20px;
+}
+
+.informacoes h3 {
     font-family: 'Dancing Script', cursive;
-    color: white;
-    font-size: 35px;
-    text-align: center;
-    flex-grow: 1;
+    color: rgb(192, 112, 138);
+    font-size: 2rem;
+    margin-bottom: 15px;
 }
 
-.descricao1 {
-    font-family: 'Poppins', sans-serif;
-    font-size: 25px;
-    border: 0;
-    padding: 0;
-    margin: 0;
-    color: #5a4b4b;
-    line-height: 1.6;
+.informacoes p {
+    margin-bottom: 10px;
+    color: #555;
 }
 
-.descricao1 {
-    margin: 35px 35px 0px 30px; 
-    font-weight: 400;
-}
-
-.descricao1 strong {
-    color: #d48db8;
-}
-
-
-.equipe {
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    gap: 20px;
-}
-
-.imagem-trabalhador {
-    width: 300px;
-    height: 400px;
-    perspective: 1000px;
-    cursor: pointer;
-    position: relative;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-
-.imagem-trabalhador {
-    transform-style: preserve-3d;
-    border-radius: 10px;
-    position: relative;
-    margin: 150px 80px 80px 0px;
-}
-
-.imagem-trabalhador img {
-    transform-style: preserve-3d;
-    border-radius: 10px;
-    position: relative;
-}
-
-.imagem-trabalhador.girado img {
-    transform: rotateY(180deg);
-}
-
-.imagem-trabalhador:hover {
-    transform: scale(1.05);
-}
-
-.imagem-trabalhador img,
-.descricao-trabalhador {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    backface-visibility: hidden;
-    transition: transform 0.6s ease;
-    position: absolute;
-    top: 0;
-    left: 0;
-}
-
-.descricao-trabalhador {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: rgba(229, 158, 170, 0.8);
-    color: white;
-    padding: 10px;
-    border-radius: 10px;
-    transform: rotateY(180deg);
-    text-align: center;
-    font-size: 25px
-}
-
-.imagem-trabalhador.girado .descricao-trabalhador {
-    transform: rotateY(0deg);
+.informacoes strong {
+    font-weight: bold;
+    color: rgb(192, 112, 138);
 }
 
 .bem-vindo {
@@ -208,6 +200,9 @@ footer p {
     margin-right: 15px;
     text-transform: capitalize;
     transition: background-color 0.3s, transform 0.3s;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
 }
 
 .bem-vindo:hover {

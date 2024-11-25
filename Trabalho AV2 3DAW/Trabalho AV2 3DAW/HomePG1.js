@@ -1,5 +1,5 @@
 function iniciarTrocaDeImagens() {
-    const intervalo = 5000;
+    const intervalo = 10000; // 10 segundos
     const imagens = [
         ['ImagensPetala/cabeloPetala.jpg', 'ImagensPetala/manicurePetala.jpg'],
         ['ImagensPetala/coloracaoPetala.jpg', 'ImagensPetala/PePetala.jpg'],

@@ -12,6 +12,7 @@
 </head>
 
 <body>
+    <?php session_start(); ?>
     <header>
         <img src="ImagensPetala/petalaBeleza.png" alt="Logo Empresa" width="125" class="logo">
         <h1>
@@ -21,27 +22,35 @@
 
     <nav>
         <ul class="menu">
-            <li><a href="SobreNosPG1.html">Sobre nós</a></li>
-            <li><a href="CentralDeAjudaPG1.html">Central de Ajuda</a></li>
-            <li><a href="ProfissionaisPG1.html">Profissionais</a></li>
-            <li><a href="">Serviços</a></li>
+            <li><a href="SobreNosPG1.php">Sobre nós</a></li>
+            <li><a href="CentralDeAjudaPG1.php">Central de Ajuda</a></li>
+            <li><a href="ProfissionaisPG1.php">Profissionais</a></li>
+            <li><a href="servicosPG1.php">Serviços</a></li>
             <ul class="menu-right">
-                <li><a href="">Login</a></li>
-                <li><a href="">Cadastre-se</a></li>
+                <?php if (isset($_SESSION['user_name'])): ?>
+                    <li><span class="bem-vindo">Bem-vindo, <?php echo htmlspecialchars($_SESSION['user_name']); ?></span></li>
+                    <li><a href="logout.php">Deslogar</a></li>
+                    <?php if (isset($_SESSION['ADM']) && $_SESSION['ADM'] == 1): ?>
+                        <li><a href="adm.php" class="admin-btn">Acessar Painel Administrativo</a></li>
+                    <?php endif; ?>
+                <?php else: ?>
+                    <li><a href="Login.html">Login</a></li>
+                    <li><a href="CadastroPG1.html">Cadastre-se</a></li>
+                <?php endif; ?>
             </ul>
         </ul>
     </nav>
 
     <p class="subtitulo">Um salão não apenas para o seu corpo, mas também para a sua mente.</p>
-  
+
     <main>
-      <img id="imagem1" src="ImagensPetala/cabeloPetala.jpg" alt="Corte Cabelo" width="150" class="imagem-petala">
-      <img id="imagem2" src="ImagensPetala/manicurePetala.jpg" alt="Manicure" width="150" class="imagem-petala">
+        <img id="imagem1" src="ImagensPetala/cabeloPetala.jpg" alt="Corte Cabelo" width="150" class="imagem-petala">
+        <img id="imagem2" src="ImagensPetala/manicurePetala.jpg" alt="Manicure" width="150" class="imagem-petala">
     </main>
-    <div  class="promocoes-container">
-        <a href="" class="promocoes">Promoções %</a>
+    <div class="promocoes-container">
+        <a href="promocaoPG1.php" class="promocoes">Promoções %</a>
     </div>
-  
+
     <footer>
         <div class="footer-info">
             <p>2024© instituto Pétalas de Beleza - Todos os direitos reservados</p>

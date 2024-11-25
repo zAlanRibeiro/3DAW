@@ -1,3 +1,9 @@
+<?php
+session_start();
+$isLoggedIn = isset($_SESSION['user_id']);
+$userName = $isLoggedIn ? $_SESSION['user_name'] : null;
+?>
+
 <!DOCTYPE html>
 <html lang="pt-BR">
 
@@ -21,12 +27,17 @@
 
     <nav>
         <ul class="menu">
-            <li><a href="HomePG1.html">Home</a></li>
+            <li><a href="HomePG1.php">Home</a></li>
             <div class="subtitulo">Sobre nós</div>
-            <ul class="menu-right">
-                <li><a href="">Login</a></li>
-                <li><a href="">Cadastre-se</a></li>
-            </ul>
+        </ul>
+        <ul class="menu-right">
+            <?php if ($isLoggedIn): ?>
+                <li class="bem-vindo"><span>Olá, <?php echo htmlspecialchars($userName); ?></span></li>
+                <li><a href="logout.php">Sair</a></li>
+            <?php else: ?>
+                <li><a href="Login.php">Login</a></li>
+                <li><a href="CadastroPG1.html">Cadastre-se</a></li>
+            <?php endif; ?>
         </ul>
     </nav>
 
@@ -34,7 +45,7 @@
         <section class="sobre-nos">
             <h2>Bem-vindo ao Pétalas de Beleza</h2>
             <p>
-                O seu refúgio de elegância e cuidado pessoal. No coração de nosso salão de beleza, floresce a paixão pela transformação, onde cada cliente é uma pétala única que merece desabrochar em toda a sua beleza. 
+                O seu refúgio de elegância e cuidado pessoal. No coração de nosso salão de beleza, floresce a paixão pela transformação, onde cada cliente é uma pétala única que merece desabrochar em toda a sua beleza.
             </p>
             <p>
                 Nós acreditamos que a verdadeira beleza reside na confiança e no bem-estar. Nossa equipe dedicada de especialistas em beleza está empenhada em proporcionar uma experiência única, onde cada visita é mais do que um simples tratamento estético, é um momento de renovação e autocuidado.
