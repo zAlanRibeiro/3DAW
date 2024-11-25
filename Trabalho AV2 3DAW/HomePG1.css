@@ -1,0 +1,156 @@
+
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+main {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 100px;
+    flex-direction: row;
+    flex-wrap: wrap; 
+}
+
+header {
+    display: flex;
+    align-items: center;
+    background-color: #e59eaa;
+    color: white;
+    padding: 20px;
+    box-sizing: border-box;
+    width: 100%;
+}
+
+.logo {
+    background-color: white;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.titulo {
+    font-size: 175%;
+    font-family: 'Dancing Script', cursive;
+    margin-left: 10px;
+}
+
+nav {
+    background-color: rgb(192, 112, 138);
+    padding: 10px 0;
+}
+
+.menu {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+}
+
+.menu li {
+    margin: 0 15px;
+}
+
+.menu a {
+    text-decoration: none;
+    color: white;
+    font-size: 20px;
+    padding: 5px 10px;
+}
+
+.menu-right {
+    list-style-type: none;
+    padding: 0;
+    margin-left: auto;
+    display: flex;
+}
+
+.menu a:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+    border-radius: 5px;
+}
+
+.subtitulo {
+    text-align: center;
+    color: black;
+    display: block;
+    font-size: 40px;
+    font-family: 'Dancing Script', cursive;
+}
+
+.imagem-petala {
+    width: 500px;
+    height: 500px;
+    object-fit: cover;
+    border-radius: 5px;
+    margin: 0 15px;
+    transition: opacity 1s ease-in-out;
+}
+
+.promocoes-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 15px;
+    margin-bottom: 80px;
+}
+
+.promocoes {
+    text-decoration: none;
+    color: white;
+    font-size: 30px;
+    padding: 10px;
+    background-color: palevioletred;
+    border-radius: 3px;
+    align-items: center;
+    transition: background-color 0.3s, transform 0.3s;
+    margin-top: 20px;
+}
+
+.promocoes:hover {
+    text-decoration: none;
+    color: white;
+    font-size: 30px;
+    background-color: pink;
+    border-radius: 3px;
+    transform: scale(1.1);
+}
+
+footer {
+    background-color: #e59eaa;
+    color: white;
+    width: 100%;
+    padding: 10px 20px;
+    box-sizing: border-box;
+    font-size: 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+footer p {
+    margin: 5px 0;
+}
+
+.footer-info {
+    text-align: left;
+}
+
+.pagamento-container {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+}
+
+.pagamento-container p {
+    margin-right: 10px;
+}
+

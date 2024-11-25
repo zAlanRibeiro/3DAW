@@ -1,0 +1,172 @@
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+header {
+    display: flex;
+    align-items: center;
+    background-color: #e59eaa;
+    color: white;
+    padding: 20px;
+    box-sizing: border-box;
+    width: 100%;
+}
+
+.logo {
+    background-color: white;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.titulo {
+    font-size: 175%;
+    font-family: 'Dancing Script', cursive;
+    margin-left: 10px;
+}
+
+nav {
+    background-color: rgb(192, 112, 138);
+    padding: 10px 0;
+    display: flex;
+    align-items: center;
+}
+
+.menu {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-grow: 1;
+    align-items: center;
+}
+
+.menu li {
+    margin: 0 15px;
+}
+
+.menu a {
+    text-decoration: none;
+    color: white;
+    font-size: 20px;
+    padding: 5px 10px;
+    display: flex;
+    align-items: center;
+}
+
+.menu-right {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    align-items: center;
+}
+
+.menu a:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+    border-radius: 5px;
+}
+
+main {
+    flex-grow: 1;
+    padding: 20px;
+}
+
+.sobre-nos {
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: center;
+    font-size: 1.2rem;
+}
+
+.sobre-nos h2 {
+    font-family: 'Dancing Script', cursive;
+    color: rgb(192, 112, 138);
+    font-size: 2rem;
+    margin-bottom: 20px;
+}
+
+.sobre-nos p {
+    line-height: 1.6;
+    color: #555;
+    margin-bottom: 15px;
+}
+
+footer {
+    background-color: #e59eaa;
+    color: white;
+    width: 100%;
+    padding: 20px;
+    box-sizing: border-box;
+    font-size: 14px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    text-align: center;
+}
+
+footer p {
+    margin: 5px 0;
+}
+
+.footer-info {
+    text-align: left;
+}
+
+.pagamento-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.pagamento-container img {
+    margin-top: 10px;
+}
+
+.subtitulo {
+    font-family: 'Dancing Script', cursive;
+    color: white;
+    font-size: 35px;
+    text-align: center;
+    flex-grow: 1;
+}
+
+.linha-rosa {
+    border: none;
+    height: 4px;
+    background-color: rgb(192, 112, 138);
+    margin: 20px 0;
+}
+
+.informacoes {
+    text-align: center;
+    font-size: 1.2rem;
+    margin-top: 20px;
+}
+
+.informacoes h3 {
+    font-family: 'Dancing Script', cursive;
+    color: rgb(192, 112, 138);
+    font-size: 2rem;
+    margin-bottom: 15px;
+}
+
+.informacoes p {
+    margin-bottom: 10px;
+    color: #555;
+}
+
+.informacoes strong {
+    font-weight: bold;
+    color: rgb(192, 112, 138);
+}
+

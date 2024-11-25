@@ -1,0 +1,195 @@
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+header {
+    display: flex;
+    align-items: center;
+    background-color: #e59eaa;
+    color: white;
+    padding: 20px;
+    box-sizing: border-box;
+    width: 100%;
+}
+
+.logo {
+    background-color: white;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.titulo {
+    font-size: 175%;
+    font-family: 'Dancing Script', cursive;
+    margin-left: 10px;
+}
+
+nav {
+    background-color: rgb(192, 112, 138);
+    padding: 10px 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.menu {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    align-items: center;
+}
+
+.menu li {
+    margin: 0 15px;
+}
+
+.menu a {
+    text-decoration: none;
+    color: white;
+    font-size: 20px;
+    padding: 5px 10px;
+    display: flex;
+    align-items: center;
+}
+
+.menu-right {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    align-items: center;
+}
+
+.menu-right a {
+    text-decoration: none;
+    color: white;
+    font-size: 18px;
+    padding: 5px 10px;
+    display: flex;
+    align-items: center;
+    margin: 0 10px;
+}
+
+.menu-right a:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+    border-radius: 5px;
+}
+
+.menu a:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+    border-radius: 5px;
+}
+
+.subtitulo {
+    font-family: 'Dancing Script', cursive;
+    color: white;
+    font-size: 35px;
+    text-align: center;
+    flex-grow: 1;
+}
+
+nav > .subtitulo {
+    flex-grow: 2;
+}
+
+.menu-right {
+    margin-left: auto;
+}
+
+main {
+    flex-grow: 1; 
+    padding: 20px;
+}
+
+h2 {
+    color: #e59eaa;
+}
+
+.faq, .artigos, .suporte {
+    margin-bottom: 40px;
+}
+
+.faq-item {
+    margin-bottom: 20px;
+}
+
+.faq-item h3 {
+    font-size: 25px;
+    color: #333;
+}
+
+.faq-item p {
+    font-size: 16px;
+    color: #666;
+}
+
+.artigos ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.artigos li {
+    margin-bottom: 10px;
+}
+
+.artigos a {
+    color: #e59eaa;
+    text-decoration: none;
+    font-size: 18px;
+}
+
+.artigos a:hover {
+    text-decoration: underline;
+}
+
+.suporte p {
+    font-size: 16px;
+    color: #666;
+}
+
+footer {
+    background-color: #e59eaa;
+    color: white;
+    width: 100%;
+    padding: 10px 20px;
+    box-sizing: border-box;
+    font-size: 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+footer p {
+    margin: 5px 0;
+}
+
+.footer-info {
+    text-align: left;
+}
+
+.pagamento-container {
+    display: flex;
+    align-items: center;
+}
+
+.pagamento-container img {
+    margin-left: 10px;
+}
+
+.menu a:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+    border-radius: 5px;
+}
+
+.artigos a:hover {
+    text-decoration: underline;
+}

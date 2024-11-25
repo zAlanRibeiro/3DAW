@@ -1,0 +1,3 @@
+nPergunta;pergunta;resposta1;resposta2;resposta3;resposta4;respostaCorreta
+1;Quanto é 1 + 1?;1;3;11;2;2
+2;Quantos dedos tem um ser humano?;5;10;20;12;20

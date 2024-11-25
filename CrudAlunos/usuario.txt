@@ -1,0 +1,3 @@
+nome;email;senha;
+Alan;teste123@gmail.com;123
+Alan;teste123@gmail.com;123
