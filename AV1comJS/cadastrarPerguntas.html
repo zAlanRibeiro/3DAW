@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Cadastrar Pergunta</title>
+</head>
+
+<body>
+    <h1>Cadastrar Nova Pergunta</h1>
+    <form id="formPergunta" onsubmit="return false;">
+        Pergunta: <input type="text" id="pergunta" required><br><br>
+        Alternativa A: <input type="text" id="respostaA" required><br><br>
+        Alternativa B: <input type="text" id="respostaB" required><br><br>
+        Alternativa C: <input type="text" id="respostaC" required><br><br>
+        Gabarito:
+        <input type="radio" name="correta" value="A" required> A
+        <input type="radio" name="correta" value="B"> B
+        <input type="radio" name="correta" value="C"> C
+        <br><br>
+        <button onclick="cadastrarPergunta()">Cadastrar</button>
+    </form>
+
+    <p id="mensagem"></p>
+    <br>
+    <a href="lista.html">Voltar</a>
+
+    <script src="scripts.js"></script>
+    <script>
+        function validarFormulario() {
+            const pergunta = document.getElementById('pergunta').value;
+            const respostaA = document.getElementById('respostaA').value;
+            const respostaB = document.getElementById('respostaB').value;
+            const respostaC = document.getElementById('respostaC').value;
+            const gabaritoSelecionado = document.querySelector('input[name="correta"]:checked');
+
+            if (!pergunta || !respostaA || !respostaB || !respostaC) {
+                alert("Por favor, preencha todos os campos!");
+                return false;
+            }
+            if (!gabaritoSelecionado) {
+                alert("Por favor, selecione o gabarito correto!");
+                return false;
+            }
+            return true;
+        }
+
+        function cadastrarPergunta() {
+            if (!validarFormulario()) return;
+
+            const perguntaObj = {
+                pergunta: document.getElementById('pergunta').value,
+                respostas: [
+                    document.getElementById('respostaA').value,
+                    document.getElementById('respostaB').value,
+                    document.getElementById('respostaC').value
+                ],
+                correta: document.querySelector('input[name="correta"]:checked').value
+            };
+
+            DB.salvarPerguntaPrototipo(perguntaObj);
+            alert("Pergunta cadastrada com sucesso!");
+            document.getElementById('formPergunta').reset();
+        }
+    </script>
+</body>
+
+</html>
